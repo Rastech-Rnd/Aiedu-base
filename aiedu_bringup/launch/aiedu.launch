@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find aiedu_bringup)/launch/aiedu_lidar.launch"/>
+      
+  <node pkg="epos4_hardware" type="epos4_hardware_2wheel_node" name="epos4_hardware_2wheel_node"/>
+
+  <node pkg="aiedu_main" type="aiedu_main_node" name="aiedu_main_node">
+    <remap from="speed" to="aiedu/mobile/encoder"/>
+  </node>
+
+<!--  <include file="$(find aiedu_bringup)/launch/aiedu_pose_ekf.launch"/> -->
+
+  <node pkg="aiedu_tf" type="aiedu_tf_node" name="aiedu_tf_node" output="screen"/>
+
+  <include file="$(find aiedu_bringup)/launch/aiedu_remote.launch"/>
+ 
+</launch>

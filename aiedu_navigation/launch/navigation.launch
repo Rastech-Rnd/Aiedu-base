@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="map_file" default="$(find aiedu_navigation)/maps/map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)">
+  </node>
+
+  <!-- AMCL -->
+  <include file="$(find aiedu_navigation)/launch/amcl.launch.xml"/>
+
+  <!-- move_base -->  
+  <arg name="cmd_vel_topic" default="/navi/cmd_vel" />  
+  <arg name="odom_topic" default="odom" />
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+    <rosparam file="$(find aiedu_navigation)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find aiedu_navigation)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find aiedu_navigation)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find aiedu_navigation)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find aiedu_navigation)/param/dwa_local_planner_params.yaml" command="load" />
+    <!--<rosparam file="$(find aiedu_navigation)/param/move_base_params.yaml" command="load" />-->
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+  </node>
+
+<!-- RVIZ --> <!--런치 파일 실행시 RVIZ를 같이 실행 하고자 하는분은 코멘트를 지우고 런치파일을 실행해주세요.-->
+ <node name="rviz" pkg="rviz" type="rviz" args="-d $(find aiedu_navigation)/rviz/aiedu_nav.rviz"/>
+
+</launch>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find aiedu_bringup)/launch/includes/description.launch.xml"/>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+
+  <node pkg="aiedu_tf" type="aiedu_tf_node" name="aiedu_tf"/>
+  
+  <node pkg="aiedu_main_control" type="aiedu_main_control" name="aiedu_main_control" output="screen"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find aiedu_description)/rviz/model.rviz"/>
+
+</launch>

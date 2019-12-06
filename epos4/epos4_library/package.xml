@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>epos4_library</name>
+  <version>0.0.1</version>
+  <description>A catkin package that provides the EPOS4 Command Library</description>
+
+  <maintainer email="jy6659@rastech.co.kr">JhungJoonYounh</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>

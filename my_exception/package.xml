@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>my_exception</name>
+  <version>0.0.0</version>
+  <description>The my_exception package</description>
+  
+  <maintainer email="rastech@todo.todo">rastech</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>move_base_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>move_base_msgs</build_export_depend>
+  <build_export_depend>std_srvs</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>move_base_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+
+</package>

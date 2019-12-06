@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<package>
+
+  <name>aiedu_navigation</name>
+  <version>0.1.0</version>
+  <description>The aiedu navigation package</description>
+
+  <maintainer email="jy6659@rastech.co.kr">Jhung</maintainer>
+
+
+
+  <license>The MIT License</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+
+  <export>
+  </export>
+
+</package>

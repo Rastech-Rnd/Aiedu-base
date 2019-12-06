@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="epos4_hardware" type="epos4_hardware_2wheel_node" name="epos4_hardware_2wheel_node" output="screen"/>
+</launch>

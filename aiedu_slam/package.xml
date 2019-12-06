@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>aiedu_slam</name>
+  <version>0.0.0</version>
+  <description>The robot_slam package</description>
+  <maintainer email="jy6659@rastech.co.kr">J</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>gmapping</exec_depend>
+  <exec_depend>aiedu_bringup</exec_depend>
+
+</package>
